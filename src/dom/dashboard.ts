@@ -75,9 +75,7 @@ async function fetchAndRenderPlanos(container: HTMLElement, resultadoWrap: HTMLE
 
   const header = container.previousElementSibling;
   if (header && header.matches("h2")) {
-    // keep
   }
-  // Clear container's siblings area (messages) before inserting
   const parent = container.parentElement!;
   parent.querySelectorAll("#planos-msg-loading, #planos-msg-error, #planos-msg-empty").forEach(n => n.remove());
   parent.insertBefore(msgLoading, container);
@@ -170,7 +168,6 @@ export function renderDashboard(): HTMLElement {
   pUser.append("Seu email: ", spanEmail);
   userInfo.appendChild(pUser);
 
-  // Novo plano
   const novoPlano = el("section");
   novoPlano.id = "novo-plano";
   const h2Novo = el("h2", { text: "Crie um Novo Plano de Aula" });
@@ -205,7 +202,6 @@ export function renderDashboard(): HTMLElement {
 
   novoPlano.append(h2Novo, form, spinner);
 
-  // Resultado
   const resultado = el("section");
   resultado.id = "resultado";
   resultado.className = "hidden";
@@ -214,7 +210,6 @@ export function renderDashboard(): HTMLElement {
   planoContainer.id = "plano-container";
   resultado.append(h2Res, planoContainer);
 
-  // Lista de planos
   const planosSection = el("section");
   planosSection.id = "planos-salvos";
   const h2Planos = el("h2", { text: "Meus Planos Salvos" });
@@ -233,7 +228,6 @@ export function renderDashboard(): HTMLElement {
 
   appSection.append(userInfo, novoPlano, resultado, planosSection, btnLogout);
 
-  // Populate user email and load planos
   (async () => {
     const user = await getUser();
     if (user) {
