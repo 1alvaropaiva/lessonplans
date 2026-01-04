@@ -45,7 +45,7 @@ function renderPlanoDetalhe(plano: PlanoDeAula) {
   ul.append(liExc, liBom, liDev);
 
   const fecharDiv = el("div", { className: "plano-fechar" });
-  const fecharBtn = el("button", { text: "Fechar" });
+  const fecharBtn = el("button", { text: "Fechar", className: "fechar-btn"});
   fecharBtn.id = "fechar-plano";
   fecharBtn.addEventListener("click", () => {
     article.parentElement?.classList.add("hidden");
@@ -151,8 +151,8 @@ async function fetchAndRenderPlanos(container: HTMLElement, resultadoWrap: HTMLE
 }
 
 export function renderDashboard(): HTMLElement {
-    // @ts-ignore
-    const root = el("div");
+  // @ts-ignore
+  const root = el("div");
 
   const header = el("header");
   const h1 = el("h1", { text: "Gerador de Planos de Aula" });

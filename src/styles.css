@@ -145,11 +145,13 @@ button:disabled {
 }
 
 .fechar-btn {
-  background-color: #7f8c8d;
+  background-color: black;
+  margin-top: 10px;
 }
 
 .plano-fechar {
-  background-color: #7f8c8d;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .plano-salvo-header {
